@@ -10,7 +10,7 @@ const evento = () =>
 {
     const id = $('#ID').val();
 
-    if (id < 10 && (id % 2) == 0)
+    if (id < 10 && (id % 2) == 0 && id >= 2)
     {
         pintar(id);
         arrayID.push(id);

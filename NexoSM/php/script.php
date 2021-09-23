@@ -7,7 +7,7 @@ function getID ($Array)
     {
         $id = $_GET['id'];
 
-        if(0 == intval($id)%2 && is_numeric($id) && $id < 10)
+        if(0 == intval($id)%2 && is_numeric($id) && $id < 10 && $id >= 2)
         {
             array_push($Array, $id);
             $_SESSION['Array'] = $Array;
