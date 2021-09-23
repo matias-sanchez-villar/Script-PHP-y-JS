@@ -17,8 +17,6 @@ const evento = () =>
         sessionStorage.setItem("arrayID", JSON.stringify(arrayID));
     }
 
-    location.replace("php/script.php?id="+id)
-
 }
 
 if(sessionStorage.getItem("arrayID"))
@@ -30,6 +28,14 @@ if(sessionStorage.getItem("arrayID"))
 }
 
 $('#btnEnviar').click(function(e){
-    e.preventDefault();
-    evento();
+    if ( cancelado ) {
+        cancelado = false;
+        return;
+      }
+      e.preventDefault();
+    
+      evento();
+    
+      cancelado = true;
+      e.dispatchEvent('click');
 });
